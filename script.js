@@ -1,4 +1,4 @@
-let size = 4;
+let size = 8;
 
 function form_grid(size){
     const grid = document.querySelector(".grid");
@@ -12,6 +12,12 @@ function form_grid(size){
         }
         grid.append(column);
     }
+    const cells = document.querySelectorAll(".cell");
+    cells.forEach(cell =>{
+        cell.addEventListener("mouseover", function(e){
+            e.target.style.backgroundColor = "black";
+        });
+    })
 }
 
 form_grid(size);
