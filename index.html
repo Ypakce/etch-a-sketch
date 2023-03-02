@@ -2,13 +2,17 @@
 <html>
     <head>
         <title>Etch-A-Sketch</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="title">Etch-A-Sketch</div>
-        <div class="buttons">
-            <button class="resize-button">Resize</button>
-            <button class="reset-button">Reset</button>
+        <h1 class="title">Etch-A-Sketch</h1>
+        <div class="controls">
+            <div class="size-control">
+                <div class="grid-size">8x8</div>
+                <input type="range" min="2" max="25" value="8">
+            </div>
+            <button class="reset">Reset</button>
         </div>
-        <div class="container"></div>
+        <div class="grid"></div>
     </body>
 </html>
