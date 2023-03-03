@@ -1,6 +1,7 @@
 let initial_size = 8;
 
 const grid = document.querySelector(".grid");
+const color = document.querySelector("#color");
 function form_grid(size){
     while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
@@ -12,7 +13,8 @@ function form_grid(size){
             const cell = document.createElement("div");
             cell.classList.add("cell");
             cell.addEventListener("mouseover", function(e){
-                e.target.style.backgroundColor = "black";
+                let color_val = color.value;
+                e.target.style.backgroundColor = color_val;
             });
             column.append(cell);
         }
