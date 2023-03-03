@@ -1,7 +1,10 @@
-let size = 10;
+let initial_size = 8;
 
+const grid = document.querySelector(".grid");
 function form_grid(size){
-    const grid = document.querySelector(".grid");
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
     for(let i=0; i<size; i++){
         const column = document.createElement("div");
         column.classList.add("column");
@@ -17,4 +20,17 @@ function form_grid(size){
     }
 }
 
-form_grid(size);
+const slider = document.querySelector("#slider");
+const grid_size = document.querySelector(".grid-size");
+slider.addEventListener("input", resize);
+
+const reset = document.querySelector(".reset");
+reset.addEventListener("click", resize);
+
+function resize(){
+    let val = slider.value;
+    form_grid(val);
+    grid_size.textContent = val + "x" + val;
+}
+
+form_grid(initial_size);
