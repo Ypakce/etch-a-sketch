@@ -1,4 +1,4 @@
-let initial_size = 8;
+let initial_size = 16;
 
 const grid = document.querySelector(".grid");
 const color = document.querySelector("#color");
